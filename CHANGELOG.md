@@ -14,6 +14,7 @@
 - **ComfyUI workflows:** recognized automatic General LLM, vision/MTMD and Qwen Image 2.1 prompt-enhancement routes; adjustable controls when a connected backend advertises support.
 - **Independent Neo branding:** sidebar wordmark and local browser icon; separate settings and local storage, without needing Neo Studio or Neo Spaces.
 - **Open source:** GNU General Public License v3; external model weights and backend software are not bundled.
+- **Local diagnostics:** HTTP access requests now rotate into private `neo_prompt_data/logs/access.log` without query values; server startup and errors are preserved in the console and `server.log`.
 
 ### Important limitations
 
