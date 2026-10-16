@@ -19,6 +19,27 @@ Neo Prompt runs independently. You do **not** need Neo Studio, Neo Spaces, or an
 
 Automatic ComfyUI routes support recognized **General LLM**, **vision LLM**, **Generic MTMD VLM** and **Qwen Image 2.1 Prompt Enhancer** node configurations. Runtime tuning is offered only when the selected installed nodes advertise those settings. Advanced users may import trusted API-format ComfyUI workflows with explicit text/result bindings.
 
+## Screenshots
+
+**Neo Prompt workspaces** — actual local application captures. The installed backends, saved work and task results shown are examples; yours will depend on your own setup.
+
+![Neo Prompt — Overview](screenshots/01-overview.png)
+
+| Prompt Studio | Caption Studio |
+| --- | --- |
+| ![Prompt Studio — create and refine prompts](screenshots/02-prompt-studio.png) | ![Caption Studio — image captioning and results](screenshots/03-caption-studio.png) |
+
+| Batch & Dataset | Library |
+| --- | --- |
+| ![Batch and Dataset — processing and progress](screenshots/04-batch-dataset.png) | ![Library — saved captions and prompts](screenshots/05-library.png) |
+
+<details>
+<summary>Connections — configure KoboldCPP and ComfyUI</summary>
+
+![Connections — local backend profiles](screenshots/06-connections.png)
+
+</details>
+
 ## Install on Windows
 
 **Requirements:** Windows 10/11, Python **3.10+** available from `py` or `python`, internet access for the first Python dependency install, and a modern browser. ComfyUI and KoboldCPP are external optional runtimes, installed separately; a compatible local model is necessary to generate anything. GPU and system-memory requirements depend on your chosen models.
@@ -43,6 +64,16 @@ Run your own ComfyUI server, normally at `http://127.0.0.1:8188`. Create a **Com
 ## ComfyUI nodes and model requirements
 
 You only need the **rows relevant to the route you use**. These are ComfyUI **node class names**, which may be provided by optional external node packs; not all ComfyUI installs include them. Neo checks the selected server's live `/object_info` and rejects unsupported/missing node and model combinations rather than guessing.
+
+### Community custom-node packages (install only what you use)
+
+| ComfyUI route | External node repository | When to install |
+| --- | --- | --- |
+| **General LLM / supported VLM via llama.cpp** | [ComfyUI-llama-cpp_vlm](https://github.com/lihaoyun6/ComfyUI-llama-cpp_vlm) | Install for Neo Prompt's recognized llama.cpp loader/instruct routes in ComfyUI, including compatible vision models with MMProj. This does **not** supply models or guarantee every architecture/handler works. |
+| **Qwen Image 2.1 Prompt Enhancer** | [ComfyUI-Qwen-Image-2.1-Prompt-Enhancer](https://github.com/benjiyaya/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer) | Install for Qwen prompt-rewrite routes. Obtain the separate **PE-T2I** and/or **PE-I2I** text-encoder checkpoints for the task you intend to run. |
+| **Neo Prompt history output** | **Bundled** `comfy_bridge/neo_prompt_text_bridge/` ([source](comfy_bridge/neo_prompt_text_bridge/)) | Copy into ComfyUI's `custom_nodes/` for the Neo output classes listed below; avoid duplicate node-class registrations. |
+
+Install each chosen package according to its upstream README, including any package-specific Python dependencies. **Restart ComfyUI**, then use **Detect installed models** in Neo Prompt. These external node packs are **not required for KoboldCPP-only use**, and no ComfyUI pack is required if you are not using that route. Other detected ComfyUI adapters, such as Generic MTMD, may have their own separate requirements.
 
 | Feature | Node(s) / assets to check | Notes |
 | --- | --- | --- |
@@ -98,7 +129,7 @@ The web server binds to **127.0.0.1 only**. Backend profiles accept loopback HTT
 
 - The owner has demonstrated the Neo Prompt browser UI running locally on Windows. This is **not** proof of a clean-machine install, live KoboldCPP/ComfyUI text and vision generation, specialist PE execution, GPU compatibility or optional Windows shutdown behavior; those paths need independent validation with your chosen models.
 - No Neo Studio legacy-data import, multi-user/remote hosting, model downloads, automatic model/node installation, universal ComfyUI node-pack support, cross-app linking, or coordinated global GPU management.
-- The screenshot gallery will be added after real application screenshots are approved; no placeholder images are presented as working product views.
+- Screenshots are owner-supplied captures and may reflect an earlier interface build; the active app version and supported capabilities are determined by the installed release.
 
 **Branding:** Neo Prompt's bundled mark and wordmark live under `neo_prompt/ui/assets/`; the mark is also used as the browser tab icon. Other Neo apps are separate installations with a consistent design language, not shared dependencies.
 

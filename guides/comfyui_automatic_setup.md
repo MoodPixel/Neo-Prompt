@@ -10,6 +10,16 @@ Neo Prompt is a **prompt/caption/dataset application**, not a second Neo Spaces 
 4. Generate normally. Neo builds the small inference graph *in memory*, queues that graph in the selected ComfyUI instance, and reads text from its explicitly bound history output. Qwen PE-T2I and PE-I2I output text, not images.
 5. To use unusual Comfy node packs or full custom workflows, choose **Advanced · Import my own workflow**. General workflow authoring belongs in Neo Spaces and requires no cross-app link.
 
+## Install the ComfyUI node packs for your selected route
+
+The app does **not** install these packages automatically. Follow the selected project's own instructions inside your separate ComfyUI installation:
+
+- **llama.cpp LLM / compatible VLM route:** [ComfyUI-llama-cpp_vlm](https://github.com/lihaoyun6/ComfyUI-llama-cpp_vlm), which provides the recognized llama.cpp loader and instruct nodes. Provide a compatible GGUF, and when using vision, the right **MMProj** and model-specific chat handler. Its own README documents package dependencies and model folder requirements.
+- **Qwen Image 2.1 PE-T2I / PE-I2I route:** [ComfyUI-Qwen-Image-2.1-Prompt-Enhancer](https://github.com/benjiyaya/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer), plus the role-specific **PE-T2I** or **PE-I2I** text encoder under the ComfyUI `models/text_encoders/` catalog. PE generates enhanced prompt **text**, not images.
+- **Neo Prompt text-output bridge:** the included [`comfy_bridge/neo_prompt_text_bridge/`](../comfy_bridge/neo_prompt_text_bridge/) folder, copied into ComfyUI's `custom_nodes/` folder when required for text/PE history results. Don't register duplicate node classes.
+
+You don't have to install both community packs. Choose only what your intended workflow uses, restart ComfyUI, then use **Detect installed models** in Neo Prompt. Connection health alone is insufficient; its live node and model catalog must be compatible. Generic MTMD routes are validated by advertised node classes and may need a different provider pack; don't assume the llama.cpp pack supplies them.
+
 ## Supported automatic adapters (only when detected)
 
 | Task | Required compatible Comfy nodes | Model choice |

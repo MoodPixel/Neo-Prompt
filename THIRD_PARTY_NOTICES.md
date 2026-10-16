@@ -14,6 +14,8 @@ The first-run installer uses `pip` to install the packages named in [`requiremen
 
 The bundled **Neo Prompt Text Bridge** is Neo Prompt application code and supplies `NeoPromptCaptionTextOutput` and `NeoPromptPEResultOutput` to a separately installed ComfyUI. Other node classes named in the README may belong to ComfyUI itself or to independently installed community node packs. Neo Prompt does not include those third-party packs.
 
+Community node repositories linked for optional user-managed installation include [ComfyUI-llama-cpp_vlm](https://github.com/lihaoyun6/ComfyUI-llama-cpp_vlm) and [ComfyUI-Qwen-Image-2.1-Prompt-Enhancer](https://github.com/benjiyaya/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer). These repositories are linked, **not vendored or redistributed**, and their source/dependencies are governed by their respective upstream licenses.
+
 Optional **Qwen Image 2.1 Prompt Enhancer** nodes, PE-T2I/PE-I2I checkpoints, GGUF language/vision models, projectors (MMProj) and other assets are obtained by users from their respective providers. Their licenses, use restrictions, attribution requirements and any model-specific conditions are **not replaced by GPLv3**. Check the individual download's terms before use or redistribution. Model licensing may differ from the custom-node code licensing.
 
 This notice describes distribution boundaries for the source repository, **not a guarantee** that an arbitrary third-party model or custom-node package is free for all uses. Report missing attributions or uncertain provenance before packaging additional third-party code/assets.
