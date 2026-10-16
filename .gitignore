@@ -1,0 +1,28 @@
+# Neo Prompt public source: user data, local environments and caches
+/.venv/
+/venv/
+/neo_prompt_data/
+/**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+.env
+.env.*
+!.env.example
+
+# Private engineering history and test utilities (local only)
+/neo_system_records/
+/tests/
+/requirements-dev.txt
+/guides/NP1_WINDOWS_VISUAL_ACCEPTANCE.md
+/.github/
+/scripts/dev/
+
+# Alternate test folder spellings on different hosts
+/Test/
+/Tests/

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="558" height="132" viewBox="0 0 558 132" role="img" aria-labelledby="title desc">
+<title id="title">Neo Prompt logo</title><desc id="desc">The Neo Prompt application logo, combining the Neo N mark and Creative Language Studio wordmark.</desc>
+<rect width="558" height="132" rx="25" fill="#0b0e16"/>
+<g transform="translate(11 9) scale(.89)"><rect x="5" y="5" width="118" height="118" rx="30" fill="#141b28" stroke="#384465" stroke-width="2"/>
+<path d="M34 90V39c0-5 2-8 7-8 3 0 6 1 8 4l31 49V38" fill="none" stroke="#a79cff" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M88 25l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#62e1e0"/></g>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="139" y="74" font-size="54" font-weight="730" fill="#edf2fb">neo</text><text x="236" y="74" font-size="54" font-weight="730" fill="#a79cff">prompt</text><text x="142" y="101" font-size="17" letter-spacing="3.2" fill="#9caabe">CREATIVE LANGUAGE STUDIO</text></g>
+</svg>

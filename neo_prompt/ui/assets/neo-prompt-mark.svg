@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+<title id="title">Neo Prompt</title><desc id="desc">A violet letter N made of two connected luminous ribbons, with a cyan spark.</desc>
+<defs><linearGradient id="g" x1=".13" y1=".1" x2=".95" y2=".9"><stop offset="0" stop-color="#c1b7ff"/><stop offset=".5" stop-color="#8978ff"/><stop offset="1" stop-color="#606dff"/></linearGradient><radialGradient id="bg"><stop stop-color="#18233d"/><stop offset="1" stop-color="#0b101b"/></radialGradient></defs>
+<rect x="5" y="5" width="118" height="118" rx="30" fill="url(#bg)" stroke="#384465" stroke-width="2"/>
+<path d="M34 90V39c0-5 2-8 7-8 3 0 6 1 8 4l31 49V38" fill="none" stroke="url(#g)" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M88 25l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#62e1e0"/>
+<circle cx="104" cy="55" r="3" fill="#62e1e0" opacity=".65"/>
+</svg>

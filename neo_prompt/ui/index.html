@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0e16">
+  <meta name="description" content="Neo Prompt local AI prompt and caption workspace">
+  <title>Neo Prompt — Creative Language Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/ui/assets/neo-prompt-mark.svg">
+  <link rel="shortcut icon" href="/ui/assets/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/ui/styles.css?v=1.0.0">
+  <script src="/ui/app.js?v=1.0.0" type="module"></script>
+</head>
+<body>
+  <div class="app-shell" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <img class="brand-logo" src="/ui/assets/neo-prompt-mark.svg" alt="" width="39" height="39">
+        <span class="brand-words"><strong>neo<span>prompt</span></strong><small>CREATIVE LANGUAGE STUDIO</small></span>
+      </div>
+      <div class="nav-group-title">WORKSPACE</div>
+      <nav class="nav-group" aria-label="Workspaces">
+        <button class="nav-link active" data-page="overview"><span class="nav-glyph" aria-hidden="true">◈</span> Overview</button>
+        <button class="nav-link" data-page="prompt"><span class="nav-glyph" aria-hidden="true">✦</span> Prompt Studio</button>
+        <button class="nav-link" data-page="caption"><span class="nav-glyph" aria-hidden="true">▧</span> Caption Studio</button>
+        <button class="nav-link" data-page="batch"><span class="nav-glyph" aria-hidden="true">▤</span> Batch &amp; Dataset</button>
+        <button class="nav-link" data-page="library"><span class="nav-glyph" aria-hidden="true">▥</span> Library</button>
+        <button class="nav-link" data-page="activity"><span class="nav-glyph" aria-hidden="true">◷</span> Activity</button>
+      </nav>
+      <div class="nav-group-title">SYSTEM</div>
+      <nav class="nav-group" aria-label="System">
+        <button class="nav-link" data-page="connections"><span class="nav-glyph" aria-hidden="true">⌘</span> Connections</button>
+        <button class="nav-link" data-page="settings"><span class="nav-glyph" aria-hidden="true">⚙</span> Settings &amp; Help</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-info"><span class="pulse-dot"></span><div><strong>Independent workspace</strong><small>Runs without another Neo app</small></div></div>
+        <div class="sidebar-footer"><span>NEO PROMPT</span><span>v1.0.0</span></div>
+      </div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="topbar-location"><button class="menu-btn" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button><span class="crumb-label">WORKSPACE</span><span class="crumb-slash">/</span><strong id="top-title">Overview</strong></div>
+        <div class="topbar-actions"><span class="top-status"><span class="pulse-dot dot-amber"></span><span id="top-status-label">Starting…</span></span><span class="top-profile" id="profile-summary">0 backends</span><button type="button" data-go="connections" class="button button-primary button-compact">+ Add backend</button></div>
+      </header>
+      <main id="main" class="main-content" tabindex="-1" aria-live="off"><div class="initial-loading">Loading Neo Prompt…</div></main>
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    </div>
+  </div>
+  <dialog id="library-name-dialog" class="neo-dialog" aria-labelledby="library-dialog-title">
+    <form method="dialog" id="library-name-form">
+      <h2 id="library-dialog-title">Save to Library</h2>
+      <p class="hint" id="library-dialog-hint">Organize this saved result without changing the source.</p>
+      <div class="field"><label for="library-dialog-category">Category / folder</label><div class="category-control"><select class="select" id="library-dialog-category" required><option value="General">General</option></select><button type="button" class="button button-outline" data-action="new-category" data-target="library">+ New category</button></div></div>
+      <div class="field"><label for="library-dialog-name">Custom name (optional)</label><input class="input" id="library-dialog-name" maxlength="120" autocomplete="off" placeholder="Uses category if left blank"><span class="hint">Category creates a local folder; blank names use the category label.</span></div>
+      <div class="button-row"><button type="button" class="button button-outline" id="library-dialog-cancel">Cancel</button><button type="submit" class="button button-primary" id="library-dialog-submit">Save</button></div>
+    </form>
+  </dialog>
+  <dialog id="category-new-dialog" class="neo-dialog" aria-labelledby="category-new-title">
+    <form method="dialog" id="category-new-form">
+      <h2 id="category-new-title">Create shared category</h2>
+      <p class="hint">New categories are available for Prompt Studio, Caption Studio, Batch, and the Library.</p>
+      <div class="field"><label for="category-new-name">Category name</label><input class="input" id="category-new-name" maxlength="64" required autocomplete="off" placeholder="e.g. Character Portraits"></div>
+      <p class="category-error" id="category-new-error" role="alert"></p>
+      <div class="button-row"><button type="button" class="button button-outline" id="category-new-cancel">Cancel</button><button type="submit" class="button button-primary" id="category-new-submit">Create category</button></div>
+    </form>
+  </dialog>
+  <noscript>Enable JavaScript to use the Neo Prompt workspace. The local server and your files remain independent.</noscript>
+</body>
+</html>
